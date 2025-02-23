@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export const Radiobuttons = () => {
+export const Radiobuttons = ({ onChange }) => {
   const [selected, setSelected] = useState(false);
 
   const handleChange = () => {
     setSelected(true);
+    onChange(true);
   };
 
   return (

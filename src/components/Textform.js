@@ -16,7 +16,7 @@ export const Textform = ({ onChange }) => {
 
     setFull(newbools);
 
-    onChange(newbools);
+    onChange(newbools, index);
   };
 
   return (

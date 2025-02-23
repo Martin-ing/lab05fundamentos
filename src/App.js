@@ -4,25 +4,48 @@ import { useState } from "react";
 import { Textform } from "./components/Textform";
 import { Radiobuttons } from "./components/Radiobuttons";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Checkboxes } from "./components/Checkboxes";
 
 function MyForm() {
-  const [selected, setSelected] = useState(false);
+  const [Bools, setBools] = useState([false, false, false]);
+  const [Texts, setTexts] = useState([false, false, false]);
 
-  // Actualiza el estado selected con los valores concatenados
-  const cambiarestado = (bool) => {
+  const cambiarestadot = (bool, index) => {
+    let newbools = Bools;
+    newbools[index] = bool[index];
+    setTexts(newbools);
     if (bool[0] & bool[1] & bool[2]) {
-      setSelected(true);
+      setBools([true, Bools[1], Bools[2]]);
     } else {
-      setSelected(false);
+      setBools([false, Bools[1], Bools[2]]);
+    }
+  };
+
+  const cambiarestador = (bool) => {
+    if (bool) {
+      setBools([Bools[0], true, Bools[2]]);
+    }
+  };
+
+  const cambiarestadoc = (bool) => {
+    if (bool) {
+      setBools([Bools[0], Bools[1], true]);
+    } else {
+      setBools([Bools[0], Bools[1], false]);
     }
   };
 
   return (
     <>
-      <Textform onChange={(full) => cambiarestado(full)} />
-      <Radiobuttons />
-      <Button variant="primary" type="submit" disabled={!selected}>
-        hola
+      <Textform onChange={(full, index) => cambiarestadot(full, index)} />
+      <Radiobuttons onChange={(selected) => cambiarestador(selected)} />
+      <Checkboxes onChange={(checked) => cambiarestadoc(checked)} />
+      <Button
+        variant="primary"
+        type="submit"
+        disabled={!Bools.every((value) => value === true)}
+      >
+        submit
       </Button>
     </>
   );
