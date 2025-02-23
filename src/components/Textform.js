@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export const Textform = () => {
+export const Textform = ({ onChange }) => {
   const [full, setFull] = useState([false, false, false]);
 
   const handleChange = (e, index) => {
@@ -15,6 +15,8 @@ export const Textform = () => {
     newbools[index] = newbool;
 
     setFull(newbools);
+
+    onChange(newbools);
   };
 
   return (
@@ -39,9 +41,6 @@ export const Textform = () => {
           onChange={(e) => handleChange(e, 2)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={!full.every(Boolean)}>
-        Submit
-      </Button>
     </Form>
   );
 };
