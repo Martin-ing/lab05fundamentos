@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 
 export const Checkboxes = ({ onChange }) => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState({
@@ -26,28 +25,28 @@ export const Checkboxes = ({ onChange }) => {
       <Form.Group className="mb-3">
         <Form.Check
           type="checkbox"
-          label="Option 1"
+          label="La comida"
           name="option1"
           checked={selectedCheckboxes.option1}
           onChange={handleChange}
         />
         <Form.Check
           type="checkbox"
-          label="Option 2"
+          label="Las clases"
           name="option2"
           checked={selectedCheckboxes.option2}
           onChange={handleChange}
         />
         <Form.Check
           type="checkbox"
-          label="Option 3"
+          label="Los horarios"
           name="option3"
           checked={selectedCheckboxes.option3}
           onChange={handleChange}
         />
         <Form.Check
           type="checkbox"
-          label="Option 4"
+          label="La administracion"
           name="option4"
           checked={selectedCheckboxes.option4}
           onChange={handleChange}

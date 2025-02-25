@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 
 export const Textform = ({ onChange }) => {
   const [full, setFull] = useState([false, false, false]);
@@ -24,19 +23,19 @@ export const Textform = ({ onChange }) => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control
           type="email"
-          placeholder="Enter email"
+          placeholder="Email"
           name="email"
           onChange={(e) => handleChange(e, 0)}
         />
         <Form.Control
           type="text"
-          placeholder="Enter text 1"
+          placeholder="Nombre"
           name="text1"
           onChange={(e) => handleChange(e, 1)}
         />
         <Form.Control
           type="text"
-          placeholder="Enter text 2"
+          placeholder="Edad"
           name="text2"
           onChange={(e) => handleChange(e, 2)}
         />

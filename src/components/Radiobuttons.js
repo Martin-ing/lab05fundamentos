@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
 
 export const Radiobuttons = ({ onChange }) => {
   const [selected, setSelected] = useState(false);
@@ -15,25 +14,25 @@ export const Radiobuttons = ({ onChange }) => {
       <Form.Group className="mb-3">
         <Form.Check
           type="radio"
-          label="Option 1"
+          label="Mucho"
           name="options"
           onChange={handleChange}
         />
         <Form.Check
           type="radio"
-          label="Option 2"
+          label="bastante"
           name="options"
           onChange={handleChange}
         />
         <Form.Check
           type="radio"
-          label="Option 3"
+          label="normal"
           name="options"
           onChange={handleChange}
         />
         <Form.Check
           type="radio"
-          label="Option 4"
+          label="poco"
           name="options"
           onChange={handleChange}
         />
